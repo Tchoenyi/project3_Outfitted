@@ -34,7 +34,6 @@ function App() {
           setFilteredObject={setFilteredObject}
       />
       <ClothesDisplay 
-        temp={temp}
         filteredObject={filteredObject}
       />
       <footer>

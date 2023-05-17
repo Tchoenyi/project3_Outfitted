@@ -22,7 +22,6 @@ const Form = ({setTemp, city, setCity}) => {
         });
 
         try {
-            // fetch request
             const response = await fetch(url);
             const apiData = await response.json();
             setTemp(apiData.main.temp);

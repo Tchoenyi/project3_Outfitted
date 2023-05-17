@@ -1,6 +1,4 @@
-const ClothesDisplay = ({temp, filteredObject}) => {
-    
-    console.log(filteredObject);
+const ClothesDisplay = ({filteredObject}) => {
     return(
         <section className='wrapper'>
             {
@@ -11,16 +9,8 @@ const ClothesDisplay = ({temp, filteredObject}) => {
                         <ul>
                             {
                                 filteredObject.map((indivisualObj) => {
-                                    console.log(indivisualObj, "Indiv");
                                     const ObjKey = Object.keys(indivisualObj); 
-                                    
                                     let randomNum = (Math.floor(Math.random() * (ObjKey.length)));
-                                    
-                                    console.log(ObjKey, "KEy Array");
-                                    console.log(randomNum);
-                                    console.log(ObjKey[randomNum], 'Key');
-                                    
-                                    console.log(indivisualObj[ObjKey[randomNum]].url);
                                     return(
                                         <li key={ObjKey[randomNum]}>
                                             <img src={indivisualObj[ObjKey[randomNum]].url} alt={indivisualObj[ObjKey[randomNum]].alt}/>
