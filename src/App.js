@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Form from './components/Form';
 import ClothesData from './components/ClothesData';
@@ -9,6 +9,7 @@ function App() {
 
   const [filteredObject, setFilteredObject] = useState([]);
   const [temp, setTemp] = useState('')
+  const [city, setCity] = useState('');
   const [clothesObj, setClothesObj] = useState([]);
   
   return (
@@ -17,13 +18,17 @@ function App() {
       
       
       <Form
+          city={city}
+          setCity={setCity}
           setTemp={setTemp}
       />
       <ClothesData 
+          city={city}
           temp={temp}
           setClothesObj={setClothesObj}
       />
       <FilteredData 
+          city={city}
           temp={temp}
           clothesObj={clothesObj}
           setFilteredObject={setFilteredObject}

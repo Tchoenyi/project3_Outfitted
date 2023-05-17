@@ -4,7 +4,7 @@ const ClothesDisplay = ({temp, filteredObject}) => {
     return(
         <section className='wrapper'>
             {
-                filteredObject.length === undefined || filteredObject[1] == undefined
+                filteredObject.length === undefined || filteredObject[1] === undefined
                     ? (<h2>Outfit Loading....</h2>)
                     : (<div>
                         <h2>Here is your outfit for today</h2>
@@ -14,7 +14,7 @@ const ClothesDisplay = ({temp, filteredObject}) => {
                                     console.log(indivisualObj, "Indiv");
                                     const ObjKey = Object.keys(indivisualObj); 
                                     
-                                    let randomNum = (Math.floor(Math.random() * (ObjKey.length - 1)));
+                                    let randomNum = (Math.floor(Math.random() * (ObjKey.length)));
                                     
                                     console.log(ObjKey, "KEy Array");
                                     console.log(randomNum);
@@ -23,7 +23,7 @@ const ClothesDisplay = ({temp, filteredObject}) => {
                                     console.log(indivisualObj[ObjKey[randomNum]].url);
                                     return(
                                         <li key={ObjKey[randomNum]}>
-                                            <img src={indivisualObj[ObjKey[randomNum]].url}/>
+                                            <img src={indivisualObj[ObjKey[randomNum]].url} alt={indivisualObj[ObjKey[randomNum]].alt}/>
                                         </li>
                                     )
                                 })

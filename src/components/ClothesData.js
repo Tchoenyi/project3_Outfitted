@@ -2,7 +2,7 @@ import app from '../firebase';
 import { onValue, ref, getDatabase} from 'firebase/database';
 import { useEffect } from 'react';
 
-const ClothesData = ({temp, setClothesObj}) => {
+const ClothesData = ({temp, setClothesObj, city}) => {
     
     useEffect( () => {
         const database = getDatabase(app);
@@ -11,11 +11,11 @@ const ClothesData = ({temp, setClothesObj}) => {
         onValue(dbRef, (dbResponse) => {
             setClothesObj(dbResponse.val());
         })
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return  temp ? (
         <div className="results">
-            <p className="temp">The temperature in is: {temp}°C</p>
+            <p className="temp">The temperature in {city} is: {temp}°C</p>
         </div>
     ) : (
         null

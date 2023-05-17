@@ -41,7 +41,6 @@ const FilteredData = ({temp, setFilteredObject, clothesObj}) => {
             }
         } else if (temp >= '5') {
             filteredClothesObject.push(clothesObj.Pants, clothesObj.Tshirts, clothesObj.Shoes)
-            alert('hey');
             console.log(filteredClothesObject, '5 or more');
             if (randomNum[0] % 2 === 0) {
                 filteredClothesObject.push(clothesObj.Sweater);
@@ -53,7 +52,7 @@ const FilteredData = ({temp, setFilteredObject, clothesObj}) => {
             filteredClothesObject.push(clothesObj.Pants, clothesObj.Tshirts, clothesObj.Shoes, clothesObj.Sweater, clothesObj.WinterJackets)
         }
         setFilteredObject(filteredClothesObject);
-    }, [temp]);
+    }, [temp]); // eslint-disable-line react-hooks/exhaustive-deps
     return(
         <>
         </>

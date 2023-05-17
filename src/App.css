@@ -1,47 +1,46 @@
 .App {
-  
+  padding-bottom: 100px;
   text-align: center;
   font-family: 'Alegreya', serif;
-  background-color:aquamarine;
   height: 100vh;
-  
   background-image: url(../public/clothesBackgroundImg.jpg);
   background-position: center;
   background-size: cover;
-  background-repeat: repeat-y;
+  background-origin:border-box ;
+  
 }
 
 h1 {
   margin: 0 auto;
-  font-size: 50px;
+  /* padding-top: 40px; */
+  font-size: 60px;
   font-weight: 900;
   color: #00595d;
 }
 h2 {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 800;
   color: #f17848;
   margin: 0 auto;
 }
+
 ul {
+  margin-top: 150px;
   list-style: none;
   padding: 0 0;
+  padding-bottom: 100px;
   display: flex;
-  
-  justify-content: space-around;
 }
 
 li {
-  flex-basis: calc(30%);
-  flex-wrap: wrap;
-
+  flex-basis: calc(20%);
 }
 
 img {
   max-width: 100%;
-  width: 50%;
+  width: 70%;
   height: 100%;
-  box-shadow: #2e7140 0px 0px 0px 3px, #f9ae4b 0px 0px 0px 6px, #00595d 0px 0px 0px 9px, #f17848 0px 0px 0px 12px, #00595d 0px 0px 0px 15px;
+  box-shadow: #2e7140 0px 0px 0px 4px, #f9ae4b 0px 0px 0px 8px, #00595d 0px 0px 0px 12px, #f17848 0px 0px 0px 16px;
 }
 
 input {
@@ -58,4 +57,58 @@ button {
   border: none;
 }
 
+.results p {
+  font-size: 20px;  
+}
+
 /* f9ae4b  #00595d  #2e7140 #f17848 */
+
+footer {
+  position: relative;
+}
+
+footer p {
+  text-decoration: underline;
+  text-decoration-color: black;
+  font-size: 20px;
+  margin-top: 0;
+}
+
+@media (max-width:1000px) {
+
+  .app {
+    background-size: 100px;
+  }
+  ul {
+    margin-top: 100px;
+    flex-wrap: wrap;
+  }
+
+  li {
+   
+    flex-basis: calc(100% / 3);
+    margin-bottom: 40px;
+  }
+  img {
+    width: 60%;
+  }
+}
+
+@media (max-width:700px) {
+  li {
+    flex-basis: calc(50%);
+  }
+  img {
+    width: 40%;
+  }
+}
+
+@media (max-width:550px) {
+  li {
+      flex-basis: calc(100%);
+    }
+  
+    img {
+      width: 35%;
+    }
+}
