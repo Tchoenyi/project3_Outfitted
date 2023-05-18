@@ -2,14 +2,14 @@ import app from '../firebase';
 import { onValue, ref, getDatabase} from 'firebase/database';
 import { useEffect } from 'react';
 
-const ClothesData = ({temp, setClothesObj, city}) => {
+const ClothesData = ({temp, setClothesArray, city}) => {
     
     useEffect( () => {
         const database = getDatabase(app);
         const dbRef = ref(database);
 
         onValue(dbRef, (dbResponse) => {
-            setClothesObj(dbResponse.val());
+            setClothesArray(dbResponse.val());
         })
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 

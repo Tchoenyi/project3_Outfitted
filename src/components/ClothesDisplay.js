@@ -1,14 +1,14 @@
-const ClothesDisplay = ({filteredObject}) => {
+const ClothesDisplay = ({filteredClothesArray}) => {
     return(
-        <section className='wrapper'>
+        <div className='wrapper'>
             {
-                filteredObject.length === undefined || filteredObject[1] === undefined
+                filteredClothesArray.length === undefined || filteredClothesArray[1] === undefined
                     ? (<h2>Outfit Loading....</h2>)
-                    : (<div>
+                    : (<div className="displayItems">
                         <h2>Here is your outfit for today</h2>
                         <ul>
                             {
-                                filteredObject.map((indivisualObj) => {
+                                filteredClothesArray.map((indivisualObj) => {
                                     const ObjKey = Object.keys(indivisualObj); 
                                     let randomNum = (Math.floor(Math.random() * (ObjKey.length)));
                                     return(
@@ -21,7 +21,7 @@ const ClothesDisplay = ({filteredObject}) => {
                         </ul>
                     </div>)
             }
-        </section>
+        </div>
     )
 }
 
