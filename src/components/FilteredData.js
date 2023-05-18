@@ -1,59 +1,56 @@
 import {useEffect} from 'react';
 
-const FilteredData = ({temp, setFilteredObject, clothesObj}) => {
+const FilteredData = ({temp, setFilteredClothesArray, clothesArray}) => {
 
     useEffect( () => {
-        let filteredClothesObject = [];
+        let filteredClothesArray = [];
         let randomNum = String(Math.floor(Math.random() * 100) + 10);
-        console.log(clothesObj.WinterJackets);
         if (temp >= '25') {
-            filteredClothesObject.push(clothesObj.Shorts, clothesObj.Tshirts, clothesObj.Shoes) 
+            filteredClothesArray.push(clothesArray.Shorts, clothesArray.Tshirts, clothesArray.Shoes) 
         } else if (temp >= '20') {
             if (randomNum[0] % 2 === 0) {
-                filteredClothesObject.push(clothesObj.Shorts, clothesObj.Tshirts, clothesObj.Shoes)
+                filteredClothesArray.push(clothesArray.Shorts, clothesArray.Tshirts, clothesArray.Shoes)
                 if (randomNum[1] % 2 === 0) {
-                    filteredClothesObject.push(clothesObj.Sweater);
+                    filteredClothesArray.push(clothesArray.Sweater);
                 }
             } else { 
-                filteredClothesObject.push(clothesObj.Pants, clothesObj.Tshirts, clothesObj.Shoes)
+                filteredClothesArray.push(clothesArray.Pants, clothesArray.Tshirts, clothesArray.Shoes)
                 if (randomNum[1] % 2 === 0) {
-                    filteredClothesObject.push(clothesObj.Sweater);
+                    filteredClothesArray.push(clothesArray.Sweater);
                 }
             }
         } else if (temp >= '15') {
-            filteredClothesObject.push(clothesObj.Pants, clothesObj.Tshirts, clothesObj.Shoes)
+            filteredClothesArray.push(clothesArray.Pants, clothesArray.Tshirts, clothesArray.Shoes)
             if (randomNum[0] % 2 === 0) {
-                filteredClothesObject.push(clothesObj.Sweater);
+                filteredClothesArray.push(clothesArray.Sweater);
             } else {
                 if (randomNum[1] % 2 === 0) {
-                    filteredClothesObject.push(clothesObj.LightJackets);
+                    filteredClothesArray.push(clothesArray.LightJackets);
                 }
             }
         } else if (temp >= '10') {
-            filteredClothesObject.push(clothesObj.Pants, clothesObj.Tshirts, clothesObj.Shoes)
+            filteredClothesArray.push(clothesArray.Pants, clothesArray.Tshirts, clothesArray.Shoes)
             if (randomNum[0] % 2 === 0) {
-                filteredClothesObject.push(clothesObj.Sweater);
+                filteredClothesArray.push(clothesArray.Sweater);
                 if (randomNum[1] % 2 === 0) {
-                    filteredClothesObject.push(clothesObj.LightJackets); 
+                    filteredClothesArray.push(clothesArray.LightJackets); 
                 }
             } else {
-                filteredClothesObject.push(clothesObj.LightJackets) ;
+                filteredClothesArray.push(clothesArray.LightJackets) ;
             }
         } else if (temp >= '5') {
-            filteredClothesObject.push(clothesObj.Pants, clothesObj.Tshirts, clothesObj.Shoes)
-            alert('hey');
-            console.log(filteredClothesObject, '5 or more');
+            filteredClothesArray.push(clothesArray.Pants, clothesArray.Tshirts, clothesArray.Shoes)
             if (randomNum[0] % 2 === 0) {
-                filteredClothesObject.push(clothesObj.Sweater);
-                filteredClothesObject.push(clothesObj.Jackets); 
+                filteredClothesArray.push(clothesArray.Sweater);
+                filteredClothesArray.push(clothesArray.Jackets); 
             } else {
-                filteredClothesObject.push(clothesObj.WinterJackets);
+                filteredClothesArray.push(clothesArray.WinterJackets);
             }
         } else {
-            filteredClothesObject.push(clothesObj.Pants, clothesObj.Tshirts, clothesObj.Shoes, clothesObj.Sweater, clothesObj.WinterJackets)
+            filteredClothesArray.push(clothesArray.Pants, clothesArray.Tshirts, clothesArray.Shoes, clothesArray.Sweater, clothesArray.WinterJackets)
         }
-        setFilteredObject(filteredClothesObject);
-    }, [temp]);
+        setFilteredClothesArray(filteredClothesArray);
+    }, [temp]); // eslint-disable-line react-hooks/exhaustive-deps
     return(
         <>
         </>
